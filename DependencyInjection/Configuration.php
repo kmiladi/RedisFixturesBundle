@@ -31,12 +31,12 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('lab5com.redis_fixtures');
+        $rootNode = $treeBuilder->root('lab5com_redis_fixtures');
 
         $rootNode
             ->children()
             ->booleanNode('debug')->defaultValue($this->debug)->end()
-            ->scalarNode('redis_client')->defaultValue('snc_redis.default')->end()
+            ->scalarNode('client')->defaultValue('snc_redis.default')->end()
             ->end()
         ;
 
