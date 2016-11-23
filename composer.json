@@ -1,0 +1,33 @@
+{
+  "name": "lab5com/redis-fixtures-bundle",
+  "type": "symfony-bundle",
+  "description": "Redis Fixture Loader for Symfony",
+  "keywords": [],
+  "homepage": "http://github.com/Lab5com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Romain Richard",
+      "email": "rrichard@outlook.fr"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "symfony/console": "*",
+    "symfony/finder": "*",
+    "symfony/config": "*",
+    "symfony/dependency-injection": "*",
+    "symfony/http-kernel": "*",
+    "snc/redis-bundle": "^2.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": { "Lab5Com\\RedisFixturesBundle\\": "" },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
