@@ -9,13 +9,13 @@ use Symfony\Component\Finder\Finder;
 use Lab5Com\RedisFixturesBundle\RedisFixtureInterface;
 
 /**
- * Class RedisFixturesLoadCommand
+ * Class RedisFixturesLoadCommand.
  * @author Romain Richard
  */
 class RedisFixturesLoadCommand extends ContainerAwareCommand
 {
     /**
-     * @var object $redisClient A Redis client supporting "set"
+     * @var object $redisClient a redis client supporting "set"
      */
     private $redisClient;
 
@@ -36,11 +36,10 @@ class RedisFixturesLoadCommand extends ContainerAwareCommand
     public function __construct($name = null)
     {
         parent::__construct($name);
-
     }
 
     /**
-     * Configure the command name & description
+     * Configure the command name & description.
      */
     protected function configure()
     {
@@ -66,7 +65,7 @@ class RedisFixturesLoadCommand extends ContainerAwareCommand
 
         foreach ($fixtures as $key => $value) {
             $this->redisClient->set($key, $value);
-            $this->debug("$key => $value");
+            $this->debug(sprintf('%s => %s', $key, $value));
         }
     }
 
@@ -87,7 +86,7 @@ class RedisFixturesLoadCommand extends ContainerAwareCommand
 
                 if ($fixture instanceof RedisFixtureInterface) {
                     $fixtures = array_merge($fixtures, $fixture->getData());
-                    $this->debug("Import Redis data from $className");
+                    $this->debug(sprintf('Import Redis data from %s', $className));
                 }
             }
         }
