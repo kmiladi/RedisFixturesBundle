@@ -22,6 +22,6 @@ class Lab5ComRedisFixturesExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('lab5com.redis_fixtures.client', $config['client']);
-        $container->setParameter('lab5com.redis_fixtures.debug', $config['client']);
+        $container->setParameter('lab5com.redis_fixtures.debug', $config['debug']);
     }
 }
